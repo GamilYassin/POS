@@ -1,5 +1,7 @@
 ﻿
 
+Imports System.Windows.Forms
+
 Namespace POSLibrary.Handlers
     ''' <summary>
     ''' This Interface has signature for all DB Direct operations
@@ -11,8 +13,7 @@ Namespace POSLibrary.Handlers
         Function CloseConnection() As Boolean
         Function TestDBConnection() As Boolean
 
-        Function GetAllRecords() As DataTable
-        Function GetFilteredData() As DataTable
+        Function SelectRows() As DataTable
         Function GetMaxId() As Integer
         Function GetRecordsCount() As Integer
 
@@ -20,9 +21,9 @@ Namespace POSLibrary.Handlers
         Sub DeleteRow()
         Sub InsertRow()
 
-        Sub FillDataGridView()
-        Sub FillComboBox()
-        Sub FillTextBox()
+        Sub FillDataGridView(ByRef myDataGridViewer As DataGridView)
+        Sub FillComboBox(ByRef myComboBox As ComboBox)
+        Sub FillTextBox(ByRef myTextBox As TextBox)
         Sub FillList()
 
         Function BackupDB(FolderLocation As String) As Boolean

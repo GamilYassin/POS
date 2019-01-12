@@ -1,7 +1,7 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Configuration
-
+Imports System.Windows.Forms
 
 Namespace POSLibrary.Handlers
     ''' <summary>
@@ -16,9 +16,9 @@ Namespace POSLibrary.Handlers
         Protected dbDataAdapter As SqlDataAdapter
 
         Protected Sub New()
-            dbConnectionString = ConfigurationManager.AppSettings.Item("Source") & ConfigurationManager.AppSettings.Item("Provider")
+			dbConnectionString = ConfigurationManager.AppSettings.Item("Source") '& ConfigurationManager.AppSettings.Item("Provider")
 
-            Me.dbConnection = New SqlConnection(dbConnectionString)
+			Me.dbConnection = New SqlConnection(dbConnectionString)
             Me.dbCommand = New SqlCommand()
             Me.dbCommand.Connection = dbConnection
             Me.dbCommand.CommandType = CommandType.StoredProcedure
@@ -69,32 +69,82 @@ Namespace POSLibrary.Handlers
         End Function
 
 
+        Protected Function SelectRows() As DataTable Implements IDBManager.SelectRows
+            Dim MyTable As New DataTable
 
+            Try
+				' Open connection
+				' execute command within adapter
+				' close connection
+				' fill table
+				'Me.dbCommand.Parameters.Clear()
+				Me.OpenConnection()
+                Me.dbDataAdapter.SelectCommand.ExecuteReader()
+                Me.CloseConnection()
+                dbDataAdapter.Fill(MyTable)
+                Me.dbCommand.Parameters.Clear()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Me.CloseConnection()
+            End Try
+            Return MyTable
+        End Function
 
+        Protected Function GetMaxId() As Integer Implements IDBManager.GetMaxId
+            Dim MaxId As Integer = 0
 
+            Try
+                Me.dbCommand.Parameters.Clear()
+                Me.dbCommand.Parameters.Add("@MaxId", SqlDbType.Int)
+                Me.dbCommand.Parameters("@MaxId").Direction = ParameterDirection.Output
+                Me.OpenConnection()
+                Me.dbCommand.ExecuteNonQuery()
+				MaxId = Integer.Parse(dbCommand.Parameters("@MaxId").Value)
+				Me.CloseConnection()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Me.CloseConnection()
+            End Try
+            Return MaxId
+        End Function
 
+        Protected Function GetRecordsCount() As Integer Implements IDBManager.GetRecordsCount
+            Dim RowsCount As Integer = 0
 
-        Protected Sub UpdateRow() Implements IDBManager.UpdateRow
-            Throw New NotImplementedException()
+            Try
+                Me.dbCommand.Parameters.Clear()
+                Me.dbCommand.Parameters.Add("@RowsCount", SqlDbType.Int)
+                Me.dbCommand.Parameters("@RowsCount").Direction = ParameterDirection.Output
+                Me.OpenConnection()
+                Me.dbCommand.ExecuteNonQuery()
+                RowsCount = dbCommand.Parameters("@RowsCount").Value
+                Me.CloseConnection()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Me.CloseConnection()
+            End Try
+            Return RowsCount
+        End Function
+
+        Protected Sub FillDataGridView(ByRef myDataGridViewer As DataGridView) Implements IDBManager.FillDataGridView
+			With myDataGridViewer
+				.DataSource = vbNull
+				'.Rows.Clear()
+				'.Columns.Clear()
+				.DataSource = Me.SelectRows()
+			End With
+		End Sub
+
+        Protected Sub FillComboBox(ByRef myComboBox As ComboBox) Implements IDBManager.FillComboBox
+            With myComboBox
+                .Items.Clear()
+                For Each Row As DataRow In Me.SelectRows().Rows
+                    .Items.Add(Row.Item(0))
+                Next
+            End With
         End Sub
 
-        Protected Sub DeleteRow() Implements IDBManager.DeleteRow
-            Throw New NotImplementedException()
-        End Sub
-
-        Protected Sub InsertRow() Implements IDBManager.InsertRow
-            Throw New NotImplementedException()
-        End Sub
-
-        Protected Sub FillDataGridView() Implements IDBManager.FillDataGridView
-            Throw New NotImplementedException()
-        End Sub
-
-        Protected Sub FillComboBox() Implements IDBManager.FillComboBox
-            Throw New NotImplementedException()
-        End Sub
-
-        Protected Sub FillTextBox() Implements IDBManager.FillTextBox
+        Protected Sub FillTextBox(ByRef myTextBox As TextBox) Implements IDBManager.FillTextBox
             Throw New NotImplementedException()
         End Sub
 
@@ -103,21 +153,29 @@ Namespace POSLibrary.Handlers
         End Sub
 
 
-        Protected Function GetAllRecords() As DataTable Implements IDBManager.GetAllRecords
-            Throw New NotImplementedException()
-        End Function
+        Private Sub ExecuteNonQuery()
+            Try
+                Me.OpenConnection()
+                Me.dbCommand.ExecuteNonQuery()
+                Me.CloseConnection()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Me.CloseConnection()
+            End Try
+        End Sub
 
-        Protected Function GetFilteredData() As DataTable Implements IDBManager.GetFilteredData
-            Throw New NotImplementedException()
-        End Function
+        Protected Sub UpdateRow() Implements IDBManager.UpdateRow
+            ExecuteNonQuery()
+        End Sub
 
-        Protected Function GetMaxId() As Integer Implements IDBManager.GetMaxId
-            Throw New NotImplementedException()
-        End Function
+        Protected Sub DeleteRow() Implements IDBManager.DeleteRow
+            ExecuteNonQuery()
+        End Sub
 
-        Protected Function GetRecordsCount() As Integer Implements IDBManager.GetRecordsCount
-            Throw New NotImplementedException()
-        End Function
+        Protected Sub InsertRow() Implements IDBManager.InsertRow
+            ExecuteNonQuery()
+        End Sub
+
 
         Protected Function BackupDB(FolderLocation As String) As Boolean Implements IDBManager.BackupDB
             Throw New NotImplementedException()

@@ -62,6 +62,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,6 +83,8 @@
   <ItemGroup>
     <Compile Include="Handlers\DBManager.vb" />
     <Compile Include="Handlers\IDBManager.vb" />
+    <Compile Include="Handlers\ProductsHandler.vb" />
+    <Compile Include="Handlers\UsersHandler.vb" />
     <Compile Include="Models\ProductModel.vb" />
     <Compile Include="Models\ReceiptsModel.vb" />
     <Compile Include="Models\SoldProductsModel.vb" />
