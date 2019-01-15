@@ -17,6 +17,7 @@ Public Class frmMain
 	Private ProductTable As New ProductsHandler
 
 	Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
 		LoginForm.ShowDialog()
 
 		If LoginForm.DialogResult = DialogResult.OK Then
@@ -24,7 +25,7 @@ Public Class frmMain
 			'Me.Close()
 		Else
 			' Terminate
-			MsgBox(" not Ok")
+			MsgBox("Not Ok")
 			Me.Close()
 		End If
 		Me.Text = "POS - " & UserName & " - " & UserPrivilage.ToString
@@ -34,6 +35,7 @@ Public Class frmMain
 
 	Private Sub LoadProductsDgv()
 		ProductTable.FillDataGridView(dgvProducts)
+		FillBarcodeCombo()
 	End Sub
 
 	Private Sub mnuUsersMgr_Click(sender As Object, e As EventArgs) Handles mnuUsersMgr.Click
@@ -151,5 +153,48 @@ Public Class frmMain
 			txtProdQty.Text = .Cells(5).Value
 		End With
 		btnProdSave.Text = "Update Product"
+	End Sub
+
+	Private Sub FillBarcodeCombo()
+		If dgvProducts.Rows.Count = 0 Then Exit Sub
+
+		cboBarcode.Items.Clear()
+		For Each Row As DataGridViewRow In dgvProducts.Rows()
+			cboBarcode.Items.Add(Row.Cells(1).Value)
+		Next
+	End Sub
+
+	Private Sub cboBarcode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboBarcode.SelectedIndexChanged
+		txtReceiptProdId.Text = dgvProducts.Rows(cboBarcode.SelectedIndex).Cells(0).Value
+		txtReceiptQty.Text = dgvProducts.Rows(cboBarcode.SelectedIndex).Cells(5).Value
+		txtReceiptDescr.Text = dgvProducts.Rows(cboBarcode.SelectedIndex).Cells(2).Value
+	End Sub
+
+	Private Sub btnReceiptAdd_Click(sender As Object, e As EventArgs) Handles btnReceiptAdd.Click
+		If txtReceiptProdId.Text = "" Then Exit Sub
+
+		Dim PQty As Integer = 1
+		Dim PPrice As Single
+		Dim Count As Integer
+		Dim bolExists As Boolean = False
+
+		PPrice = Single.Parse(dgvProducts.Rows(cboBarcode.SelectedIndex).Cells(4).Value)
+		For Count = 0 To dgvReceipts.Rows.Count - 1
+			If Integer.Parse(dgvReceipts.Rows(Count).Cells(0).Value) = Integer.Parse(txtReceiptProdId.Text) Then
+				PQty = Integer.Parse(dgvReceipts.Rows(Count).Cells(2).Value) + 1
+				dgvReceipts.Rows(Count).Cells(2).Value = PQty
+				dgvReceipts.Rows(Count).Cells(4).Value = PQty * PPrice
+				bolExists = True
+			End If
+		Next
+
+		If Not bolExists Then
+			dgvReceipts.Rows.Add(txtReceiptProdId.Text, txtReceiptDescr.Text, PQty, PPrice, PPrice)
+		End If
+	End Sub
+
+	Private Sub btnReceiptDelete_Click(sender As Object, e As EventArgs) Handles btnReceiptDelete.Click
+		If dgvReceipts.SelectedRows.Count = 0 Then Exit Sub
+		dgvReceipts.Rows.Remove(dgvReceipts.SelectedRows(0))
 	End Sub
 End Class

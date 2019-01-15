@@ -9,8 +9,8 @@ Public Class frmTest
 
         test = UserPrivilages.Admin
 
-        ' MsgBox(test & "  - " & test.ToString)
-        MsgBox(Prompt:=ConfigurationSettings.AppSettings.Item("Source"))
+		' MsgBox(test & "  - " & test.ToString)
 
-    End Sub
+
+	End Sub
 End Class

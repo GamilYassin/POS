@@ -26,7 +26,31 @@ Partial Class frmMain
 		Me.UsersManagmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuUsersMgr = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
-		Me.TabControl1 = New System.Windows.Forms.TabControl()
+		Me.TabPage4 = New System.Windows.Forms.TabPage()
+		Me.TabPage3 = New System.Windows.Forms.TabPage()
+		Me.TabPage2 = New System.Windows.Forms.TabPage()
+		Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+		Me.dgvReceipts = New System.Windows.Forms.DataGridView()
+		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+		Me.txtReceiptDate = New System.Windows.Forms.TextBox()
+		Me.Label8 = New System.Windows.Forms.Label()
+		Me.txtReceiptNo = New System.Windows.Forms.TextBox()
+		Me.Label7 = New System.Windows.Forms.Label()
+		Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+		Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+		Me.btnReceiptDelete = New System.Windows.Forms.Button()
+		Me.btnReceiptAdd = New System.Windows.Forms.Button()
+		Me.cboBarcode = New System.Windows.Forms.ComboBox()
+		Me.txtReceiptQty = New System.Windows.Forms.TextBox()
+		Me.txtReceiptDescr = New System.Windows.Forms.TextBox()
+		Me.txtReceiptProdId = New System.Windows.Forms.TextBox()
+		Me.Label10 = New System.Windows.Forms.Label()
+		Me.Label11 = New System.Windows.Forms.Label()
+		Me.Label12 = New System.Windows.Forms.Label()
+		Me.Label9 = New System.Windows.Forms.Label()
+		Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+		Me.btnReceiptCancel = New System.Windows.Forms.Button()
+		Me.btnReceiptSave = New System.Windows.Forms.Button()
 		Me.TabPage1 = New System.Windows.Forms.TabPage()
 		Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
 		Me.dgvProducts = New System.Windows.Forms.DataGridView()
@@ -46,44 +70,25 @@ Partial Class frmMain
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.TabPage2 = New System.Windows.Forms.TabPage()
-		Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-		Me.TextBox2 = New System.Windows.Forms.TextBox()
-		Me.Label8 = New System.Windows.Forms.Label()
-		Me.TextBox1 = New System.Windows.Forms.TextBox()
-		Me.Label7 = New System.Windows.Forms.Label()
-		Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-		Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
-		Me.Button3 = New System.Windows.Forms.Button()
-		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-		Me.TextBox3 = New System.Windows.Forms.TextBox()
-		Me.TextBox4 = New System.Windows.Forms.TextBox()
-		Me.TextBox5 = New System.Windows.Forms.TextBox()
-		Me.Label10 = New System.Windows.Forms.Label()
-		Me.Label11 = New System.Windows.Forms.Label()
-		Me.Label12 = New System.Windows.Forms.Label()
-		Me.Label9 = New System.Windows.Forms.Label()
-		Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-		Me.Button5 = New System.Windows.Forms.Button()
-		Me.Button4 = New System.Windows.Forms.Button()
-		Me.TabPage3 = New System.Windows.Forms.TabPage()
+		Me.TabControl1 = New System.Windows.Forms.TabControl()
+		Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.MenuStrip1.SuspendLayout()
-		Me.TabControl1.SuspendLayout()
-		Me.TabPage1.SuspendLayout()
-		Me.TableLayoutPanel1.SuspendLayout()
-		CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.GroupBox1.SuspendLayout()
 		Me.TabPage2.SuspendLayout()
 		Me.TableLayoutPanel2.SuspendLayout()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.dgvReceipts, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox2.SuspendLayout()
 		Me.TableLayoutPanel3.SuspendLayout()
 		Me.GroupBox3.SuspendLayout()
 		Me.GroupBox4.SuspendLayout()
+		Me.TabPage1.SuspendLayout()
+		Me.TableLayoutPanel1.SuspendLayout()
+		CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.GroupBox1.SuspendLayout()
+		Me.TabControl1.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'MenuStrip1
@@ -115,27 +120,285 @@ Partial Class frmMain
 		Me.mnuExit.Size = New System.Drawing.Size(45, 24)
 		Me.mnuExit.Text = "Exit"
 		'
-		'TabControl1
+		'TabPage4
 		'
-		Me.TabControl1.Controls.Add(Me.TabPage1)
-		Me.TabControl1.Controls.Add(Me.TabPage2)
-		Me.TabControl1.Controls.Add(Me.TabPage3)
-		Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.TabControl1.Location = New System.Drawing.Point(0, 28)
-		Me.TabControl1.Name = "TabControl1"
-		Me.TabControl1.SelectedIndex = 0
-		Me.TabControl1.Size = New System.Drawing.Size(1076, 557)
-		Me.TabControl1.TabIndex = 1
+		Me.TabPage4.Location = New System.Drawing.Point(25, 4)
+		Me.TabPage4.Name = "TabPage4"
+		Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+		Me.TabPage4.Size = New System.Drawing.Size(1047, 549)
+		Me.TabPage4.TabIndex = 3
+		Me.TabPage4.Text = "TabPage4"
+		Me.TabPage4.UseVisualStyleBackColor = True
+		'
+		'TabPage3
+		'
+		Me.TabPage3.BackColor = System.Drawing.Color.LightSalmon
+		Me.TabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.TabPage3.Location = New System.Drawing.Point(25, 4)
+		Me.TabPage3.Name = "TabPage3"
+		Me.TabPage3.Size = New System.Drawing.Size(1047, 549)
+		Me.TabPage3.TabIndex = 2
+		Me.TabPage3.Text = "Reports"
+		'
+		'TabPage2
+		'
+		Me.TabPage2.BackColor = System.Drawing.Color.PaleGreen
+		Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+		Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.TabPage2.Controls.Add(Me.TableLayoutPanel2)
+		Me.TabPage2.Location = New System.Drawing.Point(25, 4)
+		Me.TabPage2.Name = "TabPage2"
+		Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+		Me.TabPage2.Size = New System.Drawing.Size(1047, 549)
+		Me.TabPage2.TabIndex = 1
+		Me.TabPage2.Text = "Transactions"
+		'
+		'TableLayoutPanel2
+		'
+		Me.TableLayoutPanel2.ColumnCount = 2
+		Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.29007!))
+		Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.70993!))
+		Me.TableLayoutPanel2.Controls.Add(Me.dgvReceipts, 0, 1)
+		Me.TableLayoutPanel2.Controls.Add(Me.GroupBox2, 0, 0)
+		Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 1, 1)
+		Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
+		Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+		Me.TableLayoutPanel2.RowCount = 2
+		Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.03846!))
+		Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.96154!))
+		Me.TableLayoutPanel2.Size = New System.Drawing.Size(1039, 541)
+		Me.TableLayoutPanel2.TabIndex = 0
+		'
+		'dgvReceipts
+		'
+		Me.dgvReceipts.AllowUserToAddRows = False
+		Me.dgvReceipts.AllowUserToDeleteRows = False
+		Me.dgvReceipts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+		Me.dgvReceipts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvReceipts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+		Me.dgvReceipts.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.dgvReceipts.Location = New System.Drawing.Point(3, 78)
+		Me.dgvReceipts.MultiSelect = False
+		Me.dgvReceipts.Name = "dgvReceipts"
+		Me.dgvReceipts.ReadOnly = True
+		Me.dgvReceipts.RowTemplate.Height = 24
+		Me.dgvReceipts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		Me.dgvReceipts.Size = New System.Drawing.Size(672, 460)
+		Me.dgvReceipts.TabIndex = 0
+		'
+		'GroupBox2
+		'
+		Me.GroupBox2.Controls.Add(Me.txtReceiptDate)
+		Me.GroupBox2.Controls.Add(Me.Label8)
+		Me.GroupBox2.Controls.Add(Me.txtReceiptNo)
+		Me.GroupBox2.Controls.Add(Me.Label7)
+		Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.GroupBox2.Location = New System.Drawing.Point(3, 3)
+		Me.GroupBox2.Name = "GroupBox2"
+		Me.GroupBox2.Size = New System.Drawing.Size(672, 69)
+		Me.GroupBox2.TabIndex = 1
+		Me.GroupBox2.TabStop = False
+		'
+		'txtReceiptDate
+		'
+		Me.txtReceiptDate.Enabled = False
+		Me.txtReceiptDate.Location = New System.Drawing.Point(90, 39)
+		Me.txtReceiptDate.Name = "txtReceiptDate"
+		Me.txtReceiptDate.Size = New System.Drawing.Size(285, 22)
+		Me.txtReceiptDate.TabIndex = 3
+		'
+		'Label8
+		'
+		Me.Label8.AutoSize = True
+		Me.Label8.Location = New System.Drawing.Point(46, 44)
+		Me.Label8.Name = "Label8"
+		Me.Label8.Size = New System.Drawing.Size(38, 17)
+		Me.Label8.TabIndex = 2
+		Me.Label8.Text = "Date"
+		'
+		'txtReceiptNo
+		'
+		Me.txtReceiptNo.Enabled = False
+		Me.txtReceiptNo.Location = New System.Drawing.Point(90, 11)
+		Me.txtReceiptNo.Name = "txtReceiptNo"
+		Me.txtReceiptNo.Size = New System.Drawing.Size(285, 22)
+		Me.txtReceiptNo.TabIndex = 3
+		'
+		'Label7
+		'
+		Me.Label7.AutoSize = True
+		Me.Label7.Location = New System.Drawing.Point(6, 16)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(78, 17)
+		Me.Label7.TabIndex = 2
+		Me.Label7.Text = "Receipt No"
+		'
+		'TableLayoutPanel3
+		'
+		Me.TableLayoutPanel3.ColumnCount = 1
+		Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+		Me.TableLayoutPanel3.Controls.Add(Me.GroupBox3, 0, 0)
+		Me.TableLayoutPanel3.Controls.Add(Me.GroupBox4, 0, 1)
+		Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.TableLayoutPanel3.Location = New System.Drawing.Point(681, 78)
+		Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+		Me.TableLayoutPanel3.RowCount = 2
+		Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+		Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
+		Me.TableLayoutPanel3.Size = New System.Drawing.Size(355, 460)
+		Me.TableLayoutPanel3.TabIndex = 4
+		'
+		'GroupBox3
+		'
+		Me.GroupBox3.Controls.Add(Me.btnReceiptDelete)
+		Me.GroupBox3.Controls.Add(Me.btnReceiptAdd)
+		Me.GroupBox3.Controls.Add(Me.cboBarcode)
+		Me.GroupBox3.Controls.Add(Me.txtReceiptQty)
+		Me.GroupBox3.Controls.Add(Me.txtReceiptDescr)
+		Me.GroupBox3.Controls.Add(Me.txtReceiptProdId)
+		Me.GroupBox3.Controls.Add(Me.Label10)
+		Me.GroupBox3.Controls.Add(Me.Label11)
+		Me.GroupBox3.Controls.Add(Me.Label12)
+		Me.GroupBox3.Controls.Add(Me.Label9)
+		Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
+		Me.GroupBox3.Name = "GroupBox3"
+		Me.GroupBox3.Size = New System.Drawing.Size(349, 388)
+		Me.GroupBox3.TabIndex = 2
+		Me.GroupBox3.TabStop = False
+		'
+		'btnReceiptDelete
+		'
+		Me.btnReceiptDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnReceiptDelete.Location = New System.Drawing.Point(202, 156)
+		Me.btnReceiptDelete.Name = "btnReceiptDelete"
+		Me.btnReceiptDelete.Size = New System.Drawing.Size(139, 32)
+		Me.btnReceiptDelete.TabIndex = 12
+		Me.btnReceiptDelete.Text = "Delete"
+		Me.btnReceiptDelete.UseVisualStyleBackColor = True
+		'
+		'btnReceiptAdd
+		'
+		Me.btnReceiptAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnReceiptAdd.Location = New System.Drawing.Point(45, 156)
+		Me.btnReceiptAdd.Name = "btnReceiptAdd"
+		Me.btnReceiptAdd.Size = New System.Drawing.Size(139, 32)
+		Me.btnReceiptAdd.TabIndex = 11
+		Me.btnReceiptAdd.Text = "Add to Receipt"
+		Me.btnReceiptAdd.UseVisualStyleBackColor = True
+		'
+		'cboBarcode
+		'
+		Me.cboBarcode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+		Me.cboBarcode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+		Me.cboBarcode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboBarcode.FormattingEnabled = True
+		Me.cboBarcode.Location = New System.Drawing.Point(90, 15)
+		Me.cboBarcode.Name = "cboBarcode"
+		Me.cboBarcode.Size = New System.Drawing.Size(251, 24)
+		Me.cboBarcode.TabIndex = 10
+		'
+		'txtReceiptQty
+		'
+		Me.txtReceiptQty.Enabled = False
+		Me.txtReceiptQty.Location = New System.Drawing.Point(90, 114)
+		Me.txtReceiptQty.Name = "txtReceiptQty"
+		Me.txtReceiptQty.Size = New System.Drawing.Size(251, 22)
+		Me.txtReceiptQty.TabIndex = 9
+		'
+		'txtReceiptDescr
+		'
+		Me.txtReceiptDescr.Enabled = False
+		Me.txtReceiptDescr.Location = New System.Drawing.Point(90, 83)
+		Me.txtReceiptDescr.Name = "txtReceiptDescr"
+		Me.txtReceiptDescr.Size = New System.Drawing.Size(251, 22)
+		Me.txtReceiptDescr.TabIndex = 8
+		'
+		'txtReceiptProdId
+		'
+		Me.txtReceiptProdId.Enabled = False
+		Me.txtReceiptProdId.Location = New System.Drawing.Point(90, 52)
+		Me.txtReceiptProdId.Name = "txtReceiptProdId"
+		Me.txtReceiptProdId.Size = New System.Drawing.Size(251, 22)
+		Me.txtReceiptProdId.TabIndex = 7
+		'
+		'Label10
+		'
+		Me.Label10.AutoSize = True
+		Me.Label10.Location = New System.Drawing.Point(54, 117)
+		Me.Label10.Name = "Label10"
+		Me.Label10.Size = New System.Drawing.Size(30, 17)
+		Me.Label10.TabIndex = 4
+		Me.Label10.Text = "Qty"
+		'
+		'Label11
+		'
+		Me.Label11.AutoSize = True
+		Me.Label11.Location = New System.Drawing.Point(5, 87)
+		Me.Label11.Name = "Label11"
+		Me.Label11.Size = New System.Drawing.Size(79, 17)
+		Me.Label11.TabIndex = 5
+		Me.Label11.Text = "Description"
+		'
+		'Label12
+		'
+		Me.Label12.AutoSize = True
+		Me.Label12.Location = New System.Drawing.Point(10, 53)
+		Me.Label12.Name = "Label12"
+		Me.Label12.Size = New System.Drawing.Size(74, 17)
+		Me.Label12.TabIndex = 6
+		Me.Label12.Text = "Product ID"
+		'
+		'Label9
+		'
+		Me.Label9.AutoSize = True
+		Me.Label9.Location = New System.Drawing.Point(23, 17)
+		Me.Label9.Name = "Label9"
+		Me.Label9.Size = New System.Drawing.Size(61, 17)
+		Me.Label9.TabIndex = 2
+		Me.Label9.Text = "Barcode"
+		'
+		'GroupBox4
+		'
+		Me.GroupBox4.Controls.Add(Me.btnReceiptCancel)
+		Me.GroupBox4.Controls.Add(Me.btnReceiptSave)
+		Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.GroupBox4.Location = New System.Drawing.Point(3, 397)
+		Me.GroupBox4.Name = "GroupBox4"
+		Me.GroupBox4.Size = New System.Drawing.Size(349, 60)
+		Me.GroupBox4.TabIndex = 3
+		Me.GroupBox4.TabStop = False
+		'
+		'btnReceiptCancel
+		'
+		Me.btnReceiptCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnReceiptCancel.Location = New System.Drawing.Point(185, 11)
+		Me.btnReceiptCancel.Name = "btnReceiptCancel"
+		Me.btnReceiptCancel.Size = New System.Drawing.Size(99, 32)
+		Me.btnReceiptCancel.TabIndex = 11
+		Me.btnReceiptCancel.Text = "Cancel"
+		Me.btnReceiptCancel.UseVisualStyleBackColor = True
+		'
+		'btnReceiptSave
+		'
+		Me.btnReceiptSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnReceiptSave.Location = New System.Drawing.Point(64, 11)
+		Me.btnReceiptSave.Name = "btnReceiptSave"
+		Me.btnReceiptSave.Size = New System.Drawing.Size(99, 32)
+		Me.btnReceiptSave.TabIndex = 11
+		Me.btnReceiptSave.Text = "Save"
+		Me.btnReceiptSave.UseVisualStyleBackColor = True
 		'
 		'TabPage1
 		'
 		Me.TabPage1.BackColor = System.Drawing.Color.PowderBlue
 		Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.TabPage1.Controls.Add(Me.TableLayoutPanel1)
-		Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+		Me.TabPage1.Location = New System.Drawing.Point(25, 4)
 		Me.TabPage1.Name = "TabPage1"
 		Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-		Me.TabPage1.Size = New System.Drawing.Size(1068, 528)
+		Me.TabPage1.Size = New System.Drawing.Size(1047, 549)
 		Me.TabPage1.TabIndex = 0
 		Me.TabPage1.Text = "Products"
 		'
@@ -152,13 +415,15 @@ Partial Class frmMain
 		Me.TableLayoutPanel1.RowCount = 2
 		Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.74468!))
 		Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.255319!))
-		Me.TableLayoutPanel1.Size = New System.Drawing.Size(1060, 520)
+		Me.TableLayoutPanel1.Size = New System.Drawing.Size(1039, 541)
 		Me.TableLayoutPanel1.TabIndex = 0
 		'
 		'dgvProducts
 		'
 		Me.dgvProducts.AllowUserToAddRows = False
 		Me.dgvProducts.AllowUserToDeleteRows = False
+		Me.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+		Me.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
 		Me.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.dgvProducts.Location = New System.Drawing.Point(3, 3)
@@ -167,7 +432,7 @@ Partial Class frmMain
 		Me.dgvProducts.ReadOnly = True
 		Me.dgvProducts.RowTemplate.Height = 24
 		Me.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvProducts.Size = New System.Drawing.Size(654, 491)
+		Me.dgvProducts.Size = New System.Drawing.Size(640, 511)
 		Me.dgvProducts.TabIndex = 10
 		'
 		'GroupBox1
@@ -188,9 +453,9 @@ Partial Class frmMain
 		Me.GroupBox1.Controls.Add(Me.Label2)
 		Me.GroupBox1.Controls.Add(Me.Label1)
 		Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.GroupBox1.Location = New System.Drawing.Point(663, 3)
+		Me.GroupBox1.Location = New System.Drawing.Point(649, 3)
 		Me.GroupBox1.Name = "GroupBox1"
-		Me.GroupBox1.Size = New System.Drawing.Size(394, 491)
+		Me.GroupBox1.Size = New System.Drawing.Size(387, 511)
 		Me.GroupBox1.TabIndex = 1
 		Me.GroupBox1.TabStop = False
 		'
@@ -321,267 +586,55 @@ Partial Class frmMain
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Product ID"
 		'
-		'TabPage2
+		'TabControl1
 		'
-		Me.TabPage2.BackColor = System.Drawing.Color.PaleGreen
-		Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TabPage2.Controls.Add(Me.TableLayoutPanel2)
-		Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-		Me.TabPage2.Name = "TabPage2"
-		Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-		Me.TabPage2.Size = New System.Drawing.Size(1068, 528)
-		Me.TabPage2.TabIndex = 1
-		Me.TabPage2.Text = "Transactions"
+		Me.TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left
+		Me.TabControl1.Controls.Add(Me.TabPage1)
+		Me.TabControl1.Controls.Add(Me.TabPage2)
+		Me.TabControl1.Controls.Add(Me.TabPage3)
+		Me.TabControl1.Controls.Add(Me.TabPage4)
+		Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.TabControl1.Location = New System.Drawing.Point(0, 28)
+		Me.TabControl1.Multiline = True
+		Me.TabControl1.Name = "TabControl1"
+		Me.TabControl1.SelectedIndex = 0
+		Me.TabControl1.Size = New System.Drawing.Size(1076, 557)
+		Me.TabControl1.TabIndex = 1
 		'
-		'TableLayoutPanel2
+		'Column1
 		'
-		Me.TableLayoutPanel2.ColumnCount = 2
-		Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.29007!))
-		Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.70993!))
-		Me.TableLayoutPanel2.Controls.Add(Me.DataGridView1, 0, 1)
-		Me.TableLayoutPanel2.Controls.Add(Me.GroupBox2, 0, 0)
-		Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 1, 1)
-		Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
-		Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-		Me.TableLayoutPanel2.RowCount = 2
-		Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.03846!))
-		Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.96154!))
-		Me.TableLayoutPanel2.Size = New System.Drawing.Size(1060, 520)
-		Me.TableLayoutPanel2.TabIndex = 0
+		Me.Column1.HeaderText = "Product Id"
+		Me.Column1.Name = "Column1"
+		Me.Column1.ReadOnly = True
+		Me.Column1.Width = 93
 		'
-		'DataGridView1
+		'Column2
 		'
-		Me.DataGridView1.AllowUserToAddRows = False
-		Me.DataGridView1.AllowUserToDeleteRows = False
-		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.DataGridView1.Location = New System.Drawing.Point(3, 75)
-		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.ReadOnly = True
-		Me.DataGridView1.RowTemplate.Height = 24
-		Me.DataGridView1.Size = New System.Drawing.Size(686, 442)
-		Me.DataGridView1.TabIndex = 0
+		Me.Column2.HeaderText = "Description"
+		Me.Column2.Name = "Column2"
+		Me.Column2.ReadOnly = True
+		Me.Column2.Width = 108
 		'
-		'GroupBox2
+		'Column3
 		'
-		Me.GroupBox2.Controls.Add(Me.TextBox2)
-		Me.GroupBox2.Controls.Add(Me.Label8)
-		Me.GroupBox2.Controls.Add(Me.TextBox1)
-		Me.GroupBox2.Controls.Add(Me.Label7)
-		Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.GroupBox2.Location = New System.Drawing.Point(3, 3)
-		Me.GroupBox2.Name = "GroupBox2"
-		Me.GroupBox2.Size = New System.Drawing.Size(686, 66)
-		Me.GroupBox2.TabIndex = 1
-		Me.GroupBox2.TabStop = False
+		Me.Column3.HeaderText = "Qty"
+		Me.Column3.Name = "Column3"
+		Me.Column3.ReadOnly = True
+		Me.Column3.Width = 59
 		'
-		'TextBox2
+		'Column4
 		'
-		Me.TextBox2.Enabled = False
-		Me.TextBox2.Location = New System.Drawing.Point(90, 39)
-		Me.TextBox2.Name = "TextBox2"
-		Me.TextBox2.Size = New System.Drawing.Size(285, 22)
-		Me.TextBox2.TabIndex = 3
+		Me.Column4.HeaderText = "Unit Price"
+		Me.Column4.Name = "Column4"
+		Me.Column4.ReadOnly = True
+		Me.Column4.Width = 91
 		'
-		'Label8
+		'Column5
 		'
-		Me.Label8.AutoSize = True
-		Me.Label8.Location = New System.Drawing.Point(46, 44)
-		Me.Label8.Name = "Label8"
-		Me.Label8.Size = New System.Drawing.Size(38, 17)
-		Me.Label8.TabIndex = 2
-		Me.Label8.Text = "Date"
-		'
-		'TextBox1
-		'
-		Me.TextBox1.Enabled = False
-		Me.TextBox1.Location = New System.Drawing.Point(90, 11)
-		Me.TextBox1.Name = "TextBox1"
-		Me.TextBox1.Size = New System.Drawing.Size(285, 22)
-		Me.TextBox1.TabIndex = 3
-		'
-		'Label7
-		'
-		Me.Label7.AutoSize = True
-		Me.Label7.Location = New System.Drawing.Point(6, 16)
-		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(78, 17)
-		Me.Label7.TabIndex = 2
-		Me.Label7.Text = "Receipt No"
-		'
-		'TableLayoutPanel3
-		'
-		Me.TableLayoutPanel3.ColumnCount = 1
-		Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-		Me.TableLayoutPanel3.Controls.Add(Me.GroupBox3, 0, 0)
-		Me.TableLayoutPanel3.Controls.Add(Me.GroupBox4, 0, 1)
-		Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.TableLayoutPanel3.Location = New System.Drawing.Point(695, 75)
-		Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-		Me.TableLayoutPanel3.RowCount = 2
-		Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-		Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
-		Me.TableLayoutPanel3.Size = New System.Drawing.Size(362, 442)
-		Me.TableLayoutPanel3.TabIndex = 4
-		'
-		'GroupBox3
-		'
-		Me.GroupBox3.Controls.Add(Me.Button1)
-		Me.GroupBox3.Controls.Add(Me.Button2)
-		Me.GroupBox3.Controls.Add(Me.Button3)
-		Me.GroupBox3.Controls.Add(Me.ComboBox1)
-		Me.GroupBox3.Controls.Add(Me.TextBox3)
-		Me.GroupBox3.Controls.Add(Me.TextBox4)
-		Me.GroupBox3.Controls.Add(Me.TextBox5)
-		Me.GroupBox3.Controls.Add(Me.Label10)
-		Me.GroupBox3.Controls.Add(Me.Label11)
-		Me.GroupBox3.Controls.Add(Me.Label12)
-		Me.GroupBox3.Controls.Add(Me.Label9)
-		Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
-		Me.GroupBox3.Name = "GroupBox3"
-		Me.GroupBox3.Size = New System.Drawing.Size(356, 370)
-		Me.GroupBox3.TabIndex = 2
-		Me.GroupBox3.TabStop = False
-		'
-		'Button1
-		'
-		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button1.Location = New System.Drawing.Point(241, 158)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(104, 32)
-		Me.Button1.TabIndex = 13
-		Me.Button1.Text = "Clear Text"
-		Me.Button1.UseVisualStyleBackColor = True
-		'
-		'Button2
-		'
-		Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button2.Location = New System.Drawing.Point(119, 158)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(104, 32)
-		Me.Button2.TabIndex = 12
-		Me.Button2.Text = "Delete"
-		Me.Button2.UseVisualStyleBackColor = True
-		'
-		'Button3
-		'
-		Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button3.Location = New System.Drawing.Point(2, 158)
-		Me.Button3.Name = "Button3"
-		Me.Button3.Size = New System.Drawing.Size(99, 32)
-		Me.Button3.TabIndex = 11
-		Me.Button3.Text = "Save"
-		Me.Button3.UseVisualStyleBackColor = True
-		'
-		'ComboBox1
-		'
-		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Location = New System.Drawing.Point(90, 15)
-		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(251, 24)
-		Me.ComboBox1.TabIndex = 10
-		'
-		'TextBox3
-		'
-		Me.TextBox3.Location = New System.Drawing.Point(90, 114)
-		Me.TextBox3.Name = "TextBox3"
-		Me.TextBox3.Size = New System.Drawing.Size(251, 22)
-		Me.TextBox3.TabIndex = 9
-		'
-		'TextBox4
-		'
-		Me.TextBox4.Location = New System.Drawing.Point(90, 83)
-		Me.TextBox4.Name = "TextBox4"
-		Me.TextBox4.Size = New System.Drawing.Size(251, 22)
-		Me.TextBox4.TabIndex = 8
-		'
-		'TextBox5
-		'
-		Me.TextBox5.Enabled = False
-		Me.TextBox5.Location = New System.Drawing.Point(90, 52)
-		Me.TextBox5.Name = "TextBox5"
-		Me.TextBox5.Size = New System.Drawing.Size(251, 22)
-		Me.TextBox5.TabIndex = 7
-		'
-		'Label10
-		'
-		Me.Label10.AutoSize = True
-		Me.Label10.Location = New System.Drawing.Point(54, 117)
-		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(30, 17)
-		Me.Label10.TabIndex = 4
-		Me.Label10.Text = "Qty"
-		'
-		'Label11
-		'
-		Me.Label11.AutoSize = True
-		Me.Label11.Location = New System.Drawing.Point(5, 87)
-		Me.Label11.Name = "Label11"
-		Me.Label11.Size = New System.Drawing.Size(79, 17)
-		Me.Label11.TabIndex = 5
-		Me.Label11.Text = "Description"
-		'
-		'Label12
-		'
-		Me.Label12.AutoSize = True
-		Me.Label12.Location = New System.Drawing.Point(10, 53)
-		Me.Label12.Name = "Label12"
-		Me.Label12.Size = New System.Drawing.Size(74, 17)
-		Me.Label12.TabIndex = 6
-		Me.Label12.Text = "Product ID"
-		'
-		'Label9
-		'
-		Me.Label9.AutoSize = True
-		Me.Label9.Location = New System.Drawing.Point(23, 17)
-		Me.Label9.Name = "Label9"
-		Me.Label9.Size = New System.Drawing.Size(61, 17)
-		Me.Label9.TabIndex = 2
-		Me.Label9.Text = "Barcode"
-		'
-		'GroupBox4
-		'
-		Me.GroupBox4.Controls.Add(Me.Button5)
-		Me.GroupBox4.Controls.Add(Me.Button4)
-		Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.GroupBox4.Location = New System.Drawing.Point(3, 379)
-		Me.GroupBox4.Name = "GroupBox4"
-		Me.GroupBox4.Size = New System.Drawing.Size(356, 60)
-		Me.GroupBox4.TabIndex = 3
-		Me.GroupBox4.TabStop = False
-		'
-		'Button5
-		'
-		Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button5.Location = New System.Drawing.Point(185, 11)
-		Me.Button5.Name = "Button5"
-		Me.Button5.Size = New System.Drawing.Size(99, 32)
-		Me.Button5.TabIndex = 11
-		Me.Button5.Text = "Save"
-		Me.Button5.UseVisualStyleBackColor = True
-		'
-		'Button4
-		'
-		Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button4.Location = New System.Drawing.Point(64, 11)
-		Me.Button4.Name = "Button4"
-		Me.Button4.Size = New System.Drawing.Size(99, 32)
-		Me.Button4.TabIndex = 11
-		Me.Button4.Text = "Save"
-		Me.Button4.UseVisualStyleBackColor = True
-		'
-		'TabPage3
-		'
-		Me.TabPage3.BackColor = System.Drawing.Color.LightSalmon
-		Me.TabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-		Me.TabPage3.Name = "TabPage3"
-		Me.TabPage3.Size = New System.Drawing.Size(1068, 528)
-		Me.TabPage3.TabIndex = 2
-		Me.TabPage3.Text = "Reports"
+		Me.Column5.HeaderText = "Total Price"
+		Me.Column5.Name = "Column5"
+		Me.Column5.ReadOnly = True
+		Me.Column5.Width = 97
 		'
 		'frmMain
 		'
@@ -596,21 +649,21 @@ Partial Class frmMain
 		Me.Text = "POS"
 		Me.MenuStrip1.ResumeLayout(False)
 		Me.MenuStrip1.PerformLayout()
-		Me.TabControl1.ResumeLayout(False)
-		Me.TabPage1.ResumeLayout(False)
-		Me.TableLayoutPanel1.ResumeLayout(False)
-		CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.GroupBox1.ResumeLayout(False)
-		Me.GroupBox1.PerformLayout()
 		Me.TabPage2.ResumeLayout(False)
 		Me.TableLayoutPanel2.ResumeLayout(False)
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.dgvReceipts, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBox2.ResumeLayout(False)
 		Me.GroupBox2.PerformLayout()
 		Me.TableLayoutPanel3.ResumeLayout(False)
 		Me.GroupBox3.ResumeLayout(False)
 		Me.GroupBox3.PerformLayout()
 		Me.GroupBox4.ResumeLayout(False)
+		Me.TabPage1.ResumeLayout(False)
+		Me.TableLayoutPanel1.ResumeLayout(False)
+		CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.GroupBox1.ResumeLayout(False)
+		Me.GroupBox1.PerformLayout()
+		Me.TabControl1.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -620,10 +673,32 @@ Partial Class frmMain
 	Friend WithEvents UsersManagmentToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents mnuUsersMgr As ToolStripMenuItem
 	Friend WithEvents mnuExit As ToolStripMenuItem
-	Friend WithEvents TabControl1 As TabControl
-	Friend WithEvents TabPage1 As TabPage
-	Friend WithEvents TabPage2 As TabPage
+	Friend WithEvents TabPage4 As TabPage
 	Friend WithEvents TabPage3 As TabPage
+	Friend WithEvents TabPage2 As TabPage
+	Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+	Friend WithEvents dgvReceipts As DataGridView
+	Friend WithEvents GroupBox2 As GroupBox
+	Friend WithEvents txtReceiptDate As TextBox
+	Friend WithEvents Label8 As Label
+	Friend WithEvents txtReceiptNo As TextBox
+	Friend WithEvents Label7 As Label
+	Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+	Friend WithEvents GroupBox3 As GroupBox
+	Friend WithEvents btnReceiptDelete As Button
+	Friend WithEvents btnReceiptAdd As Button
+	Friend WithEvents cboBarcode As ComboBox
+	Friend WithEvents txtReceiptQty As TextBox
+	Friend WithEvents txtReceiptDescr As TextBox
+	Friend WithEvents txtReceiptProdId As TextBox
+	Friend WithEvents Label10 As Label
+	Friend WithEvents Label11 As Label
+	Friend WithEvents Label12 As Label
+	Friend WithEvents Label9 As Label
+	Friend WithEvents GroupBox4 As GroupBox
+	Friend WithEvents btnReceiptCancel As Button
+	Friend WithEvents btnReceiptSave As Button
+	Friend WithEvents TabPage1 As TabPage
 	Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 	Friend WithEvents dgvProducts As DataGridView
 	Friend WithEvents GroupBox1 As GroupBox
@@ -642,27 +717,10 @@ Partial Class frmMain
 	Friend WithEvents Label3 As Label
 	Friend WithEvents Label2 As Label
 	Friend WithEvents Label1 As Label
-	Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-	Friend WithEvents DataGridView1 As DataGridView
-	Friend WithEvents GroupBox2 As GroupBox
-	Friend WithEvents TextBox2 As TextBox
-	Friend WithEvents Label8 As Label
-	Friend WithEvents TextBox1 As TextBox
-	Friend WithEvents Label7 As Label
-	Friend WithEvents GroupBox3 As GroupBox
-	Friend WithEvents ComboBox1 As ComboBox
-	Friend WithEvents TextBox3 As TextBox
-	Friend WithEvents TextBox4 As TextBox
-	Friend WithEvents TextBox5 As TextBox
-	Friend WithEvents Label10 As Label
-	Friend WithEvents Label11 As Label
-	Friend WithEvents Label12 As Label
-	Friend WithEvents Label9 As Label
-	Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-	Friend WithEvents Button1 As Button
-	Friend WithEvents Button2 As Button
-	Friend WithEvents Button3 As Button
-	Friend WithEvents GroupBox4 As GroupBox
-	Friend WithEvents Button5 As Button
-	Friend WithEvents Button4 As Button
+	Friend WithEvents TabControl1 As TabControl
+	Friend WithEvents Column1 As DataGridViewTextBoxColumn
+	Friend WithEvents Column2 As DataGridViewTextBoxColumn
+	Friend WithEvents Column3 As DataGridViewTextBoxColumn
+	Friend WithEvents Column4 As DataGridViewTextBoxColumn
+	Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class
